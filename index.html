@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Grzegorz Feręs — elektryk z 5-letnim doświadczeniem, uprawnieniami SEP i gotowością do dodatkowych zleceń od połowy lipca." />
+  <title>Grzegorz Feręs — Elektryk z doświadczeniem</title>
+  <style>
+    :root{
+      --bg:#0f1115;
+      --panel:#151922;
+      --panel2:#10141c;
+      --text:#f3f5f7;
+      --muted:#aab3c2;
+      --line:rgba(255,255,255,.08);
+      --accent:#74c0fc;
+      --accent2:#9ef0b0;
+      --danger:#ffb86b;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --radius:24px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(116,192,252,.12), transparent 25%),
+        radial-gradient(circle at top right, rgba(158,240,176,.10), transparent 24%),
+        linear-gradient(180deg, #0c0f14 0%, #0f1115 100%);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    .topbar{
+      display:flex; justify-content:space-between; align-items:center; gap:16px;
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(14px);
+      background: rgba(12,15,20,.68);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px 16px;
+      box-shadow: var(--shadow);
+      margin-top:12px;
+    }
+    .brand{display:flex; flex-direction:column}
+    .brand strong{font-size:16px; letter-spacing:.2px}
+    .brand span{font-size:13px; color:var(--muted)}
+    .nav{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    .nav a{font-size:14px; color:var(--muted)}
+    .nav a:hover{color:var(--text)}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.25fr .95fr;
+      gap:24px;
+      margin-top:28px;
+      align-items:stretch;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-left{padding:34px}
+    .eyebrow{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      font-size:13px;
+      color:var(--accent2);
+      background: rgba(158,240,176,.08);
+      border:1px solid rgba(158,240,176,.15);
+      padding:8px 12px;
+      border-radius:999px;
+      margin-bottom:18px;
+    }
+    h1{
+      margin:0 0 14px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height:1.02;
+      letter-spacing:-.04em;
+    }
+    .lead{
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--muted);
+      max-width: 60ch;
+      margin:0 0 24px;
+    }
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:20px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border-radius:14px;
+      padding:14px 18px;
+      font-weight:700;
+      border:1px solid transparent;
+      transition:.2s ease;
+      min-height:50px;
+    }
+    .btn-primary{
+      background: linear-gradient(135deg, var(--accent), #8bd3ff);
+      color:#09111a;
+    }
+    .btn-primary:hover{transform: translateY(-1px)}
+    .btn-secondary{
+      background: rgba(255,255,255,.03);
+      border-color: var(--line);
+      color: var(--text);
+    }
+    .btn-secondary:hover{background: rgba(255,255,255,.06)}
+    .facts{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .fact{
+      padding:14px;
+      border-radius:18px;
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--line);
+    }
+    .fact b{display:block; font-size:24px; margin-bottom:4px}
+    .fact span{font-size:13px; color:var(--muted)}
+    .hero-right{
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+    .info-box{
+      padding:18px;
+      border-radius:20px;
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--line);
+    }
+    .info-box h2{
+      margin:0 0 8px;
+      font-size:18px;
+    }
+    .info-box p, .info-box li{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .list{
+      display:grid;
+      gap:10px;
+      padding:0;
+      margin:0;
+      list-style:none;
+    }
+    .list li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:10px 0;
+      border-top:1px solid var(--line);
+    }
+    .list li:first-child{border-top:none; padding-top:0}
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: var(--accent2);
+      margin-top:5px; flex:none;
+      box-shadow:0 0 0 4px rgba(158,240,176,.10);
+    }
+    section{margin-top:24px}
+    .section{
+      padding:28px;
+    }
+    .section h2{
+      margin:0 0 12px;
+      font-size:28px;
+      letter-spacing:-.02em;
+    }
+    .section p{
+      margin:0 0 14px;
+      color:var(--muted);
+      max-width:70ch;
+    }
+    .grid2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    .service{
+      padding:18px;
+      border-radius:18px;
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--line);
+    }
+    .service h3{margin:0 0 8px; font-size:18px}
+    .service p{margin:0; color:var(--muted)}
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:12px;
+    }
+    .contact-item{
+      padding:18px;
+      border-radius:18px;
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--line);
+    }
+    .contact-item small{display:block; color:var(--muted); margin-bottom:6px}
+    .contact-item strong{font-size:16px}
+    .footer{
+      padding:24px 0 40px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .facts,.grid2,.contact-grid{grid-template-columns:1fr}
+      .topbar{position:static}
+      .nav{display:none}
+      .hero-left{padding:24px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <strong>Grzegorz Feręs</strong>
+        <span>Elektryk · pomiary · dodatkowe zlecenia</span>
+      </div>
+      <nav class="nav">
+        <a href="#o-mnie">O mnie</a>
+        <a href="#uslugi">Usługi</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="card hero-left">
+        <div class="eyebrow">Dostępny od połowy lipca</div>
+        <h1>Prosty, szczery elektryk do zadań, które trzeba zrobić dobrze.</h1>
+        <p class="lead">
+          5 lat pracy w elektryce, uprawnienia SEP i gotowość do dodatkowych zleceń.
+          Wykonuję pomiary, sprawdzenia i drobne prace elektryczne. Bez zbędnych obietnic — po prostu fachowo.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://wa.me/48695450783" target="_blank" rel="noopener">Napisz na WhatsApp</a>
+          <a class="btn btn-secondary" href="tel:+48695450783">Zadzwoń: 695 450 783</a>
+        </div>
+        <div class="facts">
+          <div class="fact"><b>5 lat</b><span>pracy w elektryce</span></div>
+          <div class="fact"><b>SEP</b><span>uprawnienia i doświadczenie</span></div>
+          <div class="fact"><b>07.2026</b><span>gotowość od połowy lipca</span></div>
+        </div>
+      </section>
+
+      <aside class="card hero-right">
+        <div class="info-box">
+          <h2>Do kogo jest ta oferta?</h2>
+          <p>Do osób i firm, które potrzebują kogoś ogarniętego do pomiarów, kontroli i dodatkowych prac elektrycznych.</p>
+        </div>
+        <div class="info-box">
+          <h2>Co mogę zrobić?</h2>
+          <ul class="list">
+            <li><span class="dot"></span><span>Pomiary i sprawdzenia instalacji elektrycznych.</span></li>
+            <li><span class="dot"></span><span>Drobne prace elektryczne i wsparcie techniczne.</span></li>
+            <li><span class="dot"></span><span>Dodatkowe zlecenia po pracy, z uczciwą wyceną.</span></li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <h2>Lokalizacja</h2>
+          <p>Kolonia Liszno 100, 22-170 Rejowiec Fabryczny.</p>
+        </div>
+      </aside>
+    </main>
+
+    <section id="o-mnie" class="card section">
+      <h2>O mnie</h2>
+      <p>
+        Jestem elektrykiem z 5-letnim doświadczeniem i uprawnieniami SEP. Pracuję normalnie, ale po godzinach mogę
+        brać dodatkowe zlecenia. Zależy mi na konkretach, terminowości i tym, żeby klient wiedział, co jest robione i dlaczego.
+      </p>
+      <p>
+        Sprzęt i podejście traktuję poważnie — przy pomiarach i sprawdzeniach nie chodzi o „odhaczenie zadania”, tylko o
+        odpowiedzialny wynik, na którym można polegać.
+      </p>
+    </section>
+
+    <section id="uslugi" class="card section">
+      <h2>Zakres usług</h2>
+      <div class="grid2">
+        <div class="service">
+          <h3>Pomiary instalacji</h3>
+          <p>Sprawdzenia i pomiary elektryczne wykonywane w terenie, z naciskiem na rzetelny wynik i czytelny opis.</p>
+        </div>
+        <div class="service">
+          <h3>Drobne prace elektryczne</h3>
+          <p>Wsparcie przy prostych pracach i poprawkach, które trzeba zrobić szybko i bez niepotrzebnego kombinowania.</p>
+        </div>
+        <div class="service">
+          <h3>Pomoc po pracy</h3>
+          <p>Dodatkowe zlecenia w wolnym czasie — dla osób, które potrzebują fachowca na już albo na najbliższy termin.</p>
+        </div>
+        <div class="service">
+          <h3>Kontakt i wycena</h3>
+          <p>Krótki opis problemu przez WhatsApp lub telefon i szybka odpowiedź, czy da się to zrobić oraz kiedy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2>Prosty komunikat</h2>
+      <p>
+        Jeśli potrzebujesz elektryka, który ma doświadczenie, uprawnienia i bierze też dodatkowe zlecenia po godzinach —
+        odezwij się. Bez marketingu, bez owijania, po prostu konkretnie.
+      </p>
+    </section>
+
+    <section id="kontakt" class="card section">
+      <h2>Kontakt</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <small>Telefon / WhatsApp</small>
+          <strong><a href="tel:+48695450783">+48 695 450 783</a></strong>
+        </div>
+        <div class="contact-item">
+          <small>Adres</small>
+          <strong>Kolonia Liszno 100, 22-170 Rejowiec Fabryczny</strong>
+        </div>
+        <div class="contact-item">
+          <small>Dostępność</small>
+          <strong>Od połowy lipca</strong>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Grzegorz Feręs · Elektryk z doświadczeniem · Strona startowa do dodatkowych zleceń
+    </div>
+  </div>
+</body>
+</html>
