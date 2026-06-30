@@ -3,8 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Grzegorz Feręs — elektryk z 5-letnim doświadczeniem, uprawnieniami SEP i gotowością do dodatkowych zleceń od połowy lipca." />
-  <title>Grzegorz Feręs — Elektryk z doświadczeniem</title>
+
+  <!-- ====== SEO: podstawy ====== -->
+  <title>Grzegorz Feręs — Elektryk z doświadczeniem | Rejowiec Fabryczny</title>
+  <meta name="description" content="Grzegorz Feręs — elektryk z 5-letnim doświadczeniem, uprawnieniami SEP i gotowością do dodatkowych zleceń od połowy lipca. Pomiary, sprawdzenia, drobne prace elektryczne." />
+  <link rel="canonical" href="https://example.com/" /><!-- CMS: podmień na docelowy adres domeny -->
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f1115" />
+
+  <!-- ====== Open Graph ====== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:title" content="Grzegorz Feręs — Elektryk z doświadczeniem" />
+  <meta property="og:description" content="5 lat doświadczenia, uprawnienia SEP, dodatkowe zlecenia od połowy lipca. Pomiary i drobne prace elektryczne." />
+  <meta property="og:url" content="https://example.com/" /><!-- CMS: podmień na docelowy adres domeny -->
+  <meta property="og:image" content="https://example.com/og-image.jpg" /><!-- CMS: dodaj realny obraz 1200x630 -->
+  <meta property="og:site_name" content="Grzegorz Feręs — Elektryk" />
+
+  <!-- ====== Twitter Card ====== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Grzegorz Feręs — Elektryk z doświadczeniem" />
+  <meta name="twitter:description" content="5 lat doświadczenia, uprawnienia SEP, dodatkowe zlecenia od połowy lipca." />
+  <meta name="twitter:image" content="https://example.com/og-image.jpg" /><!-- CMS: dodaj realny obraz -->
+
+  <!-- ====== Favicon ====== -->
+  <link rel="icon" href="/favicon.ico" sizes="any" /><!-- CMS: dodaj favicon.ico do katalogu głównego -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" /><!-- CMS: opcjonalnie wersja SVG -->
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" /><!-- CMS: dodaj plik 180x180 -->
+
+  <!-- ====== Sitemap ====== -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" /><!-- CMS: wygeneruj sitemap.xml po dodaniu kolejnych podstron -->
+
+  <!-- ====== Schema.org: Electrician (JSON-LD) ====== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Electrician",
+    "name": "Grzegorz Feręs",
+    "description": "Elektryk z 5-letnim doświadczeniem i uprawnieniami SEP. Pomiary instalacji, sprawdzenia, drobne prace elektryczne i dodatkowe zlecenia.",
+    "telephone": "+48695450783",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kolonia Liszno 100",
+      "postalCode": "22-170",
+      "addressLocality": "Rejowiec Fabryczny",
+      "addressCountry": "PL"
+    },
+    "areaServed": "Rejowiec Fabryczny i okolice",
+    "url": "https://example.com/"
+  }
+  </script>
+  <!-- CMS: dane w schema.org aktualizuj razem z danymi w sekcji Kontakt -->
+
   <style>
     :root{
       --bg:#0f1115;
@@ -33,7 +83,31 @@
       line-height:1.5;
     }
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+
+    /* ====== Dostępność: focus i skip-link ====== */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible{
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+    .skip-link{
+      position:absolute;
+      left:-9999px;
+      top:0;
+      background:var(--accent);
+      color:#09111a;
+      padding:10px 16px;
+      border-radius:0 0 10px 0;
+      font-weight:700;
+      z-index:100;
+    }
+    .skip-link:focus{ left:0; }
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px; position:relative}
     .topbar{
       display:flex; justify-content:space-between; align-items:center; gap:16px;
       position:sticky; top:0; z-index:10;
@@ -57,6 +131,7 @@
       gap:24px;
       margin-top:28px;
       align-items:stretch;
+      position:relative;
     }
     .card{
       background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
@@ -195,6 +270,71 @@
     }
     .service h3{margin:0 0 8px; font-size:18px}
     .service p{margin:0; color:var(--muted)}
+
+    /* ====== Realizacje (galeria placeholderów) ====== */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+    }
+    .gallery-item{
+      aspect-ratio: 4/3;
+      border-radius:18px;
+      background: rgba(255,255,255,.03);
+      border:1px dashed var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+      padding:12px;
+    }
+
+    /* ====== Opinie ====== */
+    .reviews-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+    }
+    .review-item{
+      padding:18px;
+      border-radius:18px;
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:14px;
+    }
+    .review-item .stars{ color:var(--accent2); margin-bottom:8px; font-size:14px; letter-spacing:2px}
+    .review-item .author{ display:block; margin-top:10px; color:var(--text); font-weight:600; font-size:13px }
+
+    /* ====== Formularz Fast Step ====== */
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .form-field{ display:flex; flex-direction:column; gap:6px }
+    .form-field.full{ grid-column: 1 / -1 }
+    .form-field label{ font-size:13px; color:var(--muted) }
+    .form-field input,
+    .form-field select,
+    .form-field textarea{
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:12px 14px;
+      color:var(--text);
+      font-family:inherit;
+      font-size:14px;
+    }
+    .form-field textarea{ resize:vertical; min-height:90px }
+    .form-submit{
+      margin-top:6px;
+      grid-column: 1 / -1;
+      justify-self:start;
+    }
+
     .contact-grid{
       display:grid;
       grid-template-columns:1fr 1fr 1fr;
@@ -209,135 +349,266 @@
     .contact-item small{display:block; color:var(--muted); margin-bottom:6px}
     .contact-item strong{font-size:16px}
     .footer{
-      padding:24px 0 40px;
+      padding:24px 0 16px;
       color:var(--muted);
       font-size:13px;
       text-align:center;
     }
+    .signature{
+      text-align:center;
+      padding:0 0 28px;
+      font-size:12px;
+      color: rgba(170,179,194,.6);
+    }
+    .signature a{
+      color: rgba(170,179,194,.85);
+      border-bottom:1px solid rgba(170,179,194,.25);
+      transition:.2s ease;
+    }
+    .signature a:hover,
+    .signature a:focus-visible{
+      color: var(--accent2);
+      border-color: var(--accent2);
+    }
+
+    /* ====== Motyw: subtelny przewód elektryczny (czysto dekoracyjny, ukryty dla czytników ekranu) ====== */
+    .wire-deco{
+      position:absolute;
+      pointer-events:none;
+      z-index:0;
+      opacity:.35;
+    }
+    .wire-deco--hero{
+      right:-6px; top:-10px;
+      width:120px; height:220px;
+    }
+    .wire-deco--footer{
+      left:50%; transform:translateX(-50%);
+      bottom:-6px;
+      width:160px; height:24px;
+    }
+    .hero-left, .footer{ position:relative; z-index:1 }
+
     @media (max-width: 900px){
       .hero{grid-template-columns:1fr}
-      .facts,.grid2,.contact-grid{grid-template-columns:1fr}
+      .facts,.grid2,.contact-grid,.gallery-grid,.reviews-grid,.form-grid{grid-template-columns:1fr}
       .topbar{position:static}
       .nav{display:none}
       .hero-left{padding:24px}
+      .wire-deco{display:none}
     }
   </style>
 </head>
 <body>
+  <!-- Dostępność: link pomijający nawigację dla użytkowników klawiatury -->
+  <a class="skip-link" href="#tresc">Przejdź do treści głównej</a>
+
   <div class="wrap">
     <header class="topbar">
       <div class="brand">
         <strong>Grzegorz Feręs</strong>
         <span>Elektryk · pomiary · dodatkowe zlecenia</span>
       </div>
-      <nav class="nav">
+      <nav class="nav" aria-label="Nawigacja główna">
         <a href="#o-mnie">O mnie</a>
         <a href="#uslugi">Usługi</a>
+        <a href="#realizacje">Realizacje</a>
+        <a href="#opinie">Opinie</a>
+        <a href="#zgloszenie">Zgłoszenie</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
     </header>
 
-    <main class="hero">
-      <section class="card hero-left">
-        <div class="eyebrow">Dostępny od połowy lipca</div>
-        <h1>Prosty, szczery elektryk do zadań, które trzeba zrobić dobrze.</h1>
-        <p class="lead">
-          5 lat pracy w elektryce, uprawnienia SEP i gotowość do dodatkowych zleceń.
-          Wykonuję pomiary, sprawdzenia i drobne prace elektryczne. Bez zbędnych obietnic — po prostu fachowo.
+    <main id="tresc">
+      <section class="hero">
+        <article class="card hero-left">
+          <!-- Dekoracja: subtelny przewód kończący się zaciskiem, czysto wizualna -->
+          <svg class="wire-deco wire-deco--hero" aria-hidden="true" focusable="false" viewBox="0 0 120 220" fill="none">
+            <path d="M10 0 C 10 60, 90 60, 90 110 S 40 170, 40 220" stroke="var(--accent2)" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="40" cy="220" r="5" fill="none" stroke="var(--accent2)" stroke-width="1.5"/>
+          </svg>
+
+          <p class="eyebrow">Dostępny od połowy lipca</p>
+          <h1>Prosty, szczery elektryk do zadań, które trzeba zrobić dobrze.</h1>
+          <p class="lead">
+            5 lat pracy w elektryce, uprawnienia SEP i gotowość do dodatkowych zleceń.
+            Wykonuję pomiary, sprawdzenia i drobne prace elektryczne. Bez zbędnych obietnic — po prostu fachowo.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://wa.me/48695450783" target="_blank" rel="noopener" aria-label="Napisz na WhatsApp do Grzegorza Feręsa">Napisz na WhatsApp</a>
+            <a class="btn btn-secondary" href="tel:+48695450783" aria-label="Zadzwoń pod numer 695 450 783">Zadzwoń: 695 450 783</a>
+          </div>
+          <div class="facts">
+            <div class="fact"><b>5 lat</b><span>pracy w elektryce</span></div>
+            <div class="fact"><b>SEP</b><span>uprawnienia i doświadczenie</span></div>
+            <div class="fact"><b>07.2026</b><span>gotowość od połowy lipca</span></div>
+          </div>
+        </article>
+
+        <aside class="card hero-right" aria-label="Informacje skrócone">
+          <div class="info-box">
+            <h2>Do kogo jest ta oferta?</h2>
+            <p>Do osób i firm, które potrzebują kogoś ogarniętego do pomiarów, kontroli i dodatkowych prac elektrycznych.</p>
+          </div>
+          <div class="info-box">
+            <h2>Co mogę zrobić?</h2>
+            <ul class="list">
+              <li><span class="dot" aria-hidden="true"></span><span>Pomiary i sprawdzenia instalacji elektrycznych.</span></li>
+              <li><span class="dot" aria-hidden="true"></span><span>Drobne prace elektryczne i wsparcie techniczne.</span></li>
+              <li><span class="dot" aria-hidden="true"></span><span>Dodatkowe zlecenia po pracy, z uczciwą wyceną.</span></li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <h2>Lokalizacja</h2>
+            <p>Kolonia Liszno 100, 22-170 Rejowiec Fabryczny.</p>
+          </div>
+        </aside>
+      </section>
+
+      <!-- CMS: sekcja "O mnie" — treść do swobodnej edycji bez ruszania struktury -->
+      <section id="o-mnie" class="card section" aria-labelledby="o-mnie-h">
+        <h2 id="o-mnie-h">O mnie</h2>
+        <p>
+          Jestem elektrykiem z 5-letnim doświadczeniem i uprawnieniami SEP. Pracuję normalnie, ale po godzinach mogę
+          brać dodatkowe zlecenia. Zależy mi na konkretach, terminowości i tym, żeby klient wiedział, co jest robione i dlaczego.
         </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://wa.me/48695450783" target="_blank" rel="noopener">Napisz na WhatsApp</a>
-          <a class="btn btn-secondary" href="tel:+48695450783">Zadzwoń: 695 450 783</a>
-        </div>
-        <div class="facts">
-          <div class="fact"><b>5 lat</b><span>pracy w elektryce</span></div>
-          <div class="fact"><b>SEP</b><span>uprawnienia i doświadczenie</span></div>
-          <div class="fact"><b>07.2026</b><span>gotowość od połowy lipca</span></div>
+        <p>
+          Sprzęt i podejście traktuję poważnie — przy pomiarach i sprawdzeniach nie chodzi o „odhaczenie zadania", tylko o
+          odpowiedzialny wynik, na którym można polegać.
+        </p>
+      </section>
+
+      <!-- CMS: sekcja "Usługi" — każda karta to osobny blok .service, można dodawać/usuwać swobodnie -->
+      <section id="uslugi" class="card section" aria-labelledby="uslugi-h">
+        <h2 id="uslugi-h">Zakres usług</h2>
+        <div class="grid2">
+          <div class="service">
+            <h3>Pomiary instalacji</h3>
+            <p>Sprawdzenia i pomiary elektryczne wykonywane w terenie, z naciskiem na rzetelny wynik i czytelny opis.</p>
+          </div>
+          <div class="service">
+            <h3>Drobne prace elektryczne</h3>
+            <p>Wsparcie przy prostych pracach i poprawkach, które trzeba zrobić szybko i bez niepotrzebnego kombinowania.</p>
+          </div>
+          <div class="service">
+            <h3>Pomoc po pracy</h3>
+            <p>Dodatkowe zlecenia w wolnym czasie — dla osób, które potrzebują fachowca na już albo na najbliższy termin.</p>
+          </div>
+          <div class="service">
+            <h3>Kontakt i wycena</h3>
+            <p>Krótki opis problemu przez WhatsApp lub telefon i szybka odpowiedź, czy da się to zrobić oraz kiedy.</p>
+          </div>
         </div>
       </section>
 
-      <aside class="card hero-right">
-        <div class="info-box">
-          <h2>Do kogo jest ta oferta?</h2>
-          <p>Do osób i firm, które potrzebują kogoś ogarniętego do pomiarów, kontroli i dodatkowych prac elektrycznych.</p>
+      <!-- CMS: sekcja "Realizacje" — placeholdery do podmiany na zdjęcia (np. <img src="..." loading="lazy" alt="..."> zamiast diva) -->
+      <section id="realizacje" class="card section" aria-labelledby="realizacje-h">
+        <h2 id="realizacje-h">Realizacje</h2>
+        <p>Wybrane przykłady wykonanych prac — zdjęcia w przygotowaniu.</p>
+        <div class="gallery-grid">
+          <!-- Zdjęcie realizacji 1 -->
+          <div class="gallery-item">Zdjęcie realizacji — wkrótce</div>
+          <!-- Zdjęcie realizacji 2 -->
+          <div class="gallery-item">Zdjęcie realizacji — wkrótce</div>
+          <!-- Zdjęcie realizacji 3 -->
+          <div class="gallery-item">Zdjęcie realizacji — wkrótce</div>
         </div>
-        <div class="info-box">
-          <h2>Co mogę zrobić?</h2>
-          <ul class="list">
-            <li><span class="dot"></span><span>Pomiary i sprawdzenia instalacji elektrycznych.</span></li>
-            <li><span class="dot"></span><span>Drobne prace elektryczne i wsparcie techniczne.</span></li>
-            <li><span class="dot"></span><span>Dodatkowe zlecenia po pracy, z uczciwą wyceną.</span></li>
-          </ul>
+      </section>
+
+      <!-- CMS: sekcja "Opinie" — placeholdery, podmienić treść i autora po zebraniu realnych opinii -->
+      <section id="opinie" class="card section" aria-labelledby="opinie-h">
+        <h2 id="opinie-h">Opinie klientów</h2>
+        <div class="reviews-grid">
+          <!-- Opinia 1 -->
+          <div class="review-item">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <p>Treść opinii klienta — miejsce na podmianę.</p>
+            <span class="author">Imię, miejscowość</span>
+          </div>
+          <!-- Opinia 2 -->
+          <div class="review-item">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <p>Treść opinii klienta — miejsce na podmianę.</p>
+            <span class="author">Imię, miejscowość</span>
+          </div>
+          <!-- Opinia 3 -->
+          <div class="review-item">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <p>Treść opinii klienta — miejsce na podmianę.</p>
+            <span class="author">Imię, miejscowość</span>
+          </div>
         </div>
-        <div class="info-box">
-          <h2>Lokalizacja</h2>
-          <p>Kolonia Liszno 100, 22-170 Rejowiec Fabryczny.</p>
+      </section>
+
+      <section class="card section" aria-labelledby="komunikat-h">
+        <h2 id="komunikat-h">Prosty komunikat</h2>
+        <p>
+          Jeśli potrzebujesz elektryka, który ma doświadczenie, uprawnienia i bierze też dodatkowe zlecenia po godzinach —
+          odezwij się. Bez marketingu, bez owijania, po prostu konkretnie.
+        </p>
+      </section>
+
+      <!-- Formularz Fast Step: bez backendu — gotowy pod przyszłe podłączenie (np. action + endpoint, fetch/POST) -->
+      <section id="zgloszenie" class="card section" aria-labelledby="zgloszenie-h">
+        <h2 id="zgloszenie-h">Szybkie zgłoszenie</h2>
+        <p>Wypełnij krótki formularz — oddzwonię lub odpiszę z wyceną.</p>
+        <form class="form-grid" action="#" method="post"><!-- CMS/DEV: podmienić action na docelowy endpoint przyjmujący zgłoszenia -->
+          <div class="form-field">
+            <label for="problem">Rodzaj problemu</label>
+            <select id="problem" name="problem" required>
+              <option value="" disabled selected>Wybierz rodzaj</option>
+              <option value="pomiary">Pomiary instalacji</option>
+              <option value="awaria">Awaria / usterka</option>
+              <option value="drobne-prace">Drobne prace elektryczne</option>
+              <option value="inne">Inne</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="miejscowosc">Miejscowość</label>
+            <input type="text" id="miejscowosc" name="miejscowosc" autocomplete="address-level2" required />
+          </div>
+          <div class="form-field">
+            <label for="telefon">Telefon</label>
+            <input type="tel" id="telefon" name="telefon" autocomplete="tel" required />
+          </div>
+          <div class="form-field full">
+            <label for="opis">Krótki opis</label>
+            <textarea id="opis" name="opis" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Wyślij zgłoszenie</button>
+        </form>
+      </section>
+
+      <!-- CMS: dane kontaktowe — trzymane w jednym miejscu, zgodne z danymi w schema.org powyżej -->
+      <section id="kontakt" class="card section" aria-labelledby="kontakt-h">
+        <h2 id="kontakt-h">Kontakt</h2>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <small>Telefon / WhatsApp</small>
+            <strong><a href="tel:+48695450783">+48 695 450 783</a></strong>
+          </div>
+          <div class="contact-item">
+            <small>Adres</small>
+            <strong>Kolonia Liszno 100, 22-170 Rejowiec Fabryczny</strong>
+          </div>
+          <div class="contact-item">
+            <small>Dostępność</small>
+            <strong>Od połowy lipca</strong>
+          </div>
         </div>
-      </aside>
+      </section>
     </main>
-
-    <section id="o-mnie" class="card section">
-      <h2>O mnie</h2>
-      <p>
-        Jestem elektrykiem z 5-letnim doświadczeniem i uprawnieniami SEP. Pracuję normalnie, ale po godzinach mogę
-        brać dodatkowe zlecenia. Zależy mi na konkretach, terminowości i tym, żeby klient wiedział, co jest robione i dlaczego.
-      </p>
-      <p>
-        Sprzęt i podejście traktuję poważnie — przy pomiarach i sprawdzeniach nie chodzi o „odhaczenie zadania”, tylko o
-        odpowiedzialny wynik, na którym można polegać.
-      </p>
-    </section>
-
-    <section id="uslugi" class="card section">
-      <h2>Zakres usług</h2>
-      <div class="grid2">
-        <div class="service">
-          <h3>Pomiary instalacji</h3>
-          <p>Sprawdzenia i pomiary elektryczne wykonywane w terenie, z naciskiem na rzetelny wynik i czytelny opis.</p>
-        </div>
-        <div class="service">
-          <h3>Drobne prace elektryczne</h3>
-          <p>Wsparcie przy prostych pracach i poprawkach, które trzeba zrobić szybko i bez niepotrzebnego kombinowania.</p>
-        </div>
-        <div class="service">
-          <h3>Pomoc po pracy</h3>
-          <p>Dodatkowe zlecenia w wolnym czasie — dla osób, które potrzebują fachowca na już albo na najbliższy termin.</p>
-        </div>
-        <div class="service">
-          <h3>Kontakt i wycena</h3>
-          <p>Krótki opis problemu przez WhatsApp lub telefon i szybka odpowiedź, czy da się to zrobić oraz kiedy.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="card section">
-      <h2>Prosty komunikat</h2>
-      <p>
-        Jeśli potrzebujesz elektryka, który ma doświadczenie, uprawnienia i bierze też dodatkowe zlecenia po godzinach —
-        odezwij się. Bez marketingu, bez owijania, po prostu konkretnie.
-      </p>
-    </section>
-
-    <section id="kontakt" class="card section">
-      <h2>Kontakt</h2>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <small>Telefon / WhatsApp</small>
-          <strong><a href="tel:+48695450783">+48 695 450 783</a></strong>
-        </div>
-        <div class="contact-item">
-          <small>Adres</small>
-          <strong>Kolonia Liszno 100, 22-170 Rejowiec Fabryczny</strong>
-        </div>
-        <div class="contact-item">
-          <small>Dostępność</small>
-          <strong>Od połowy lipca</strong>
-        </div>
-      </div>
-    </section>
 
     <div class="footer">
       Grzegorz Feręs · Elektryk z doświadczeniem · Strona startowa do dodatkowych zleceń
+    </div>
+
+    <div class="signature">
+      <svg class="wire-deco wire-deco--footer" aria-hidden="true" focusable="false" viewBox="0 0 160 24" fill="none" style="position:relative; display:block; margin:0 auto 10px;">
+        <path d="M0 12 H 60 C 75 12, 75 12, 90 12 S 140 12, 160 12" stroke="var(--line)" stroke-width="1.5"/>
+        <circle cx="90" cy="12" r="3.5" fill="none" stroke="var(--accent2)" stroke-width="1.5"/>
+      </svg>
+      Designed &amp; developed by <a href="https://alpocket.cool" target="_blank" rel="noopener noreferrer">AlPocket</a>
     </div>
   </div>
 </body>
