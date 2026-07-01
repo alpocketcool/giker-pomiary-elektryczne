@@ -414,8 +414,7 @@
         <a href="#uslugi">Usługi</a>
         <a href="#realizacje">Realizacje</a>
         <a href="#opinie">Opinie</a>
-        <a href="#zgloszenie">Zgłoszenie</a>
-        <a href="#kontakt">Kontakt</a>
+                <a href="#kontakt">Kontakt</a>
       </nav>
     </header>
 
@@ -435,7 +434,7 @@
             Wykonuję pomiary, sprawdzenia i drobne prace elektryczne. Bez zbędnych obietnic — po prostu fachowo.
           </p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="https://wa.me/48695450783" target="_blank" rel="noopener" aria-label="Napisz na WhatsApp do Grzegorza Feręsa">Napisz na WhatsApp</a>
+            <a class="btn btn-primary" href="https://wa.me/48695450783" target="_blank" rel="noopener" aria-label="Napisz na WhatsApp">Napisz na WhatsApp</a>
             <a class="btn btn-secondary" href="tel:+48695450783" aria-label="Zadzwoń pod numer 695 450 783">Zadzwoń: 695 450 783</a>
           </div>
           <div class="facts">
@@ -548,36 +547,6 @@
         </p>
       </section>
 
-      <!-- Formularz Fast Step: bez backendu — gotowy pod przyszłe podłączenie (np. action + endpoint, fetch/POST) -->
-      <section id="zgloszenie" class="card section" aria-labelledby="zgloszenie-h">
-        <h2 id="zgloszenie-h">Szybkie zgłoszenie</h2>
-        <p>Wypełnij krótki formularz — oddzwonię lub odpiszę z wyceną.</p>
-        <form class="form-grid" action="#" method="post"><!-- CMS/DEV: podmienić action na docelowy endpoint przyjmujący zgłoszenia -->
-          <div class="form-field">
-            <label for="problem">Rodzaj problemu</label>
-            <select id="problem" name="problem" required>
-              <option value="" disabled selected>Wybierz rodzaj</option>
-              <option value="pomiary">Pomiary instalacji</option>
-              <option value="awaria">Awaria / usterka</option>
-              <option value="drobne-prace">Drobne prace elektryczne</option>
-              <option value="inne">Inne</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label for="miejscowosc">Miejscowość</label>
-            <input type="text" id="miejscowosc" name="miejscowosc" autocomplete="address-level2" required />
-          </div>
-          <div class="form-field">
-            <label for="telefon">Telefon</label>
-            <input type="tel" id="telefon" name="telefon" autocomplete="tel" required />
-          </div>
-          <div class="form-field full">
-            <label for="opis">Krótki opis</label>
-            <textarea id="opis" name="opis" rows="3"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary form-submit">Wyślij zgłoszenie</button>
-        </form>
-      </section>
 
       <!-- CMS: dane kontaktowe — trzymane w jednym miejscu, zgodne z danymi w schema.org powyżej -->
       <section id="kontakt" class="card section" aria-labelledby="kontakt-h">
